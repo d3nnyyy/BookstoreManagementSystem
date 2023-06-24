@@ -1,5 +1,6 @@
 package ua.dtsebulia.spring.BookstoreManagementSystem.book;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,7 @@ public class Book {
     private int year;
     private String genre;
     private int pages;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Author author;
 
 }
