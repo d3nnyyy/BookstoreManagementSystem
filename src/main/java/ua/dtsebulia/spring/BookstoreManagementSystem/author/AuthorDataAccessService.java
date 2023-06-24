@@ -58,11 +58,18 @@ public class AuthorDataAccessService implements AuthorDao {
 
     @Override
     public int deleteAuthor(Integer id) {
-        var sql = """
+
+        var deleteBooksSql = """
+            DELETE FROM book
+            WHERE author_id = ?
+        """;
+        jdbcTemplate.update(deleteBooksSql, id);
+
+        var deleteAuthorSql = """
             DELETE FROM author
             WHERE id = ?
         """;
-        return jdbcTemplate.update(sql, id);
+        return jdbcTemplate.update(deleteAuthorSql, id);
     }
 
     @Override
