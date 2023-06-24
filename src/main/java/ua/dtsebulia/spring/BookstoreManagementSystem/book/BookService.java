@@ -61,4 +61,8 @@ public class BookService {
                 }
         );
     }
+
+    public List<Book> getBooksByAuthor(Integer id) {
+        return bookDao.selectBooksByAuthor(id);
+    }
 }

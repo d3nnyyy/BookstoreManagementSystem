@@ -96,6 +96,21 @@ public class BookDataAccessService implements BookDao {
         );
     }
 
+    @Override
+    public List<Book> selectBooksByAuthor(Integer id) {
+
+        var sql = """
+                SELECT
+                b.id, b.title, b.year, b.genre, b.pages,
+                a.id as author_id, a.name as author_name, a.age as author_age
+                FROM book b
+                INNER JOIN author a ON b.author_id = a.id
+                WHERE a.id = ?
+                """;
+        return jdbcTemplate.query(sql, new BookRowMapper(), id);
+
+    }
+
     public boolean validateAuthorForBook(Book book) {
 
         var authorExistsSql = """

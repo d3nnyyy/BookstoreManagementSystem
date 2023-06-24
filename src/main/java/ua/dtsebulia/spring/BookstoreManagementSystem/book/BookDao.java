@@ -13,4 +13,6 @@ public interface BookDao {
     int deleteBook(Integer id);
 
     int editBook(Integer id, Book book);
+
+    List<Book> selectBooksByAuthor(Integer id);
 }
