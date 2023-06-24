@@ -1,23 +1,24 @@
-package ua.dtsebulia.spring.BookstoreManagementSystem.author;
+package ua.dtsebulia.spring.BookstoreManagementSystem.book;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ua.dtsebulia.spring.BookstoreManagementSystem.book.Book;
-
-import java.util.List;
+import ua.dtsebulia.spring.BookstoreManagementSystem.author.Author;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Author {
+public class Book {
 
     private Integer id;
-    private String name;
-    private int age;
+    private String title;
+    private int year;
+    private String genre;
+    private int pages;
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private List<Book> books;
+    private Author author;
+
 }
