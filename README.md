@@ -35,27 +35,23 @@ Before running the application, make sure you have the following installed:
 
 1. Clone the repository:
 
-  ```bash
-  git clone https://github.com/d3nnyyy/BookstoreManagementSystem.git
-  ```
+```bash
+git clone https://github.com/d3nnyyy/BookstoreManagementSystem.git
+```
   
-2. Run the database migrations using Flyway:
+2. Open the project in your preffered IDE.
 
-  ```bash
-  mvn flyway:migrate
-  ```
+3. Run the Docker:
 
-3. Build the Docker image:
+```bash
+docker-compose up -d
+```
 
-  ```bash
-  docker build -t bookstore-management-system .  
-  ```
+4. Run the application:
 
-4. Run the Docker container:
-
-  ```
-  docker run -p 8080:8080 bookstore-management-system
-  ```
+```
+mvn spring-boot:run
+```
 
 The application will be accessible at `http://localhost:8080`.
 
